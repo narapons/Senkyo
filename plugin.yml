@@ -1,0 +1,13 @@
+---
+name: Senkyo
+main: senkyo\main
+version: 1.0.0
+api: 3.0.0
+author: narapon
+
+
+commands:
+  senkyo:
+    usage: "/senkyo < vote | list >"
+    description: 選挙システム
+...
