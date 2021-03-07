@@ -68,9 +68,9 @@ class main extends PluginBase implements Listener
 							}
 							break;
 						case"vote":
-                            $name = $sender->getName();
-                            if (!$this->setting->exists("on")) {
-                                $sender->sendMessage("§e[選挙システム] 現在は選挙が行われていません。");
+						    $name = $sender->getName();
+						    if (!$this->setting->exists("on")) {
+						        $sender->sendMessage("§e[選挙システム] 現在は選挙が行われていません。");
                             } else if (!isset($args[1])) {
 								$sender->sendMessage("§e[選挙システム] 投票する政党を入力してください。");
                             } else if (!$this->senkyo->exists($args[1])) {
@@ -95,17 +95,17 @@ class main extends PluginBase implements Listener
 							} else if (!isset($args[1])) {
 									$sender->sendMessage("§e[選挙システム] 使い方 /senkyo setting [on / off / now]");
 							} else {
-							    switch($args[1]){
-							        case"on":
-							            if ($this->setting->exists("on")) {
-							                $sender->sendMessage("§e[選挙システム] 既に選挙は有効です。");
-							            } else {
-							                $this->setting->set("on", "on");
-							                $this->setting->save();
-							                $this->setting->reload();
-							                $sender->sendMessage("§6[選挙システム] 選挙を有効にしました。");
-							            }
-							            break;
+                                switch ($args[1]) {
+                                    case"on":
+                                        if ($this->setting->exists("on")) {
+                                            $sender->sendMessage("§e[選挙システム] 既に選挙は有効です。");
+                                        } else {
+                                            $this->setting->set("on", "on");
+                                            $this->setting->save();
+                                            $this->setting->reload();
+                                            $sender->sendMessage("§6[選挙システム] 選挙を有効にしました。");
+                                        }
+                                        break;
                                     case"off":
                                         if (!$this->setting->exists("on")) {
                                             $sender->sendMessage("§e[選挙システム] 既に選挙は無効です。");
@@ -126,8 +126,8 @@ class main extends PluginBase implements Listener
                                     default:
                                         $sender->sendMessage("§e[選挙システム] 使い方 /senkyo setting [on / off / now]");
                                         break;
-								}
-							}
+                                }
+                            }
 							break;
 						default:
 							if($sender->isOp()) {
